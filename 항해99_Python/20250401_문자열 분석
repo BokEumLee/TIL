@@ -1,7 +1,4 @@
-제목: 99클럽 코테 스터디 2일차 TIL + 문자열 분석
-
-1.소스 코드
-#문자열 분석
+0. 문제 및 코드
 while True:
     try :
         word = list(input())
@@ -21,16 +18,42 @@ while True:
     except EOFError :
         break
 
-2. 오늘의 학습 키워드
+1. 오늘의 학습 키워드
 - 문자열 분석
 ※ 문제 링크: https://www.acmicpc.net/problem/10820
-3. 공부한 내용 본인의 언어로 정리하기
+2. 공부한 내용 본인의 언어로 정리하기
 - N개의 입력이 있을 시, 무한반복문과 try ~ except 문의 예외처리기법 사용하여 해결하기
-4. 오늘의 회고
+3. 오늘의 회고
   1) 어떤 문제가 있었고, 나는 어떤 시도를 했는지
-  
-  - 어떻게 해결했는지
-  - 무엇을 새롭게 알았는지
-  - 내일 학습할 것은 무엇인지
+  - 처음에 for문으로 작성했으나, N번의 입력 값이 미지수로 불가하다고 판단하였습니다.
+    ※ 첫번째 시도 코드
+        #문자열 분석
+        word = list(input())
+        word_len = len(word)
+        str_lower = 0
+        str_upper = 0
+        number = 0
+        space = 0
+        
+        for i in range(word_len):
+            if str(type(word[i])) == "<class 'int'>":
+                number += 1
+            elif word[i].islower():
+                str_lower += 1
+            elif word[i].isupper():
+                str_upper += 1
+            else:
+                space += 1
+        
+        print(str_lower, str_upper, number, space)
+
+  2) 어떻게 해결했는지
+  - 고민 끝에 반복문 함수 중에 무한반복문 while 문과 try ~ except 예외처리를 사용하면 해결할 수 있을 것이라 생각했습니다.
+
+  3) 무엇을 새롭게 알았는지
+  - 문제의 조건을 잘 살피고 설계 후에 코딩을 해야 시간도 절약할 수 있다는 것을 알게 되었습니다.
+    또, 예외처리의 유용성을 알게 되었습니다.
+  4) 내일 학습할 것은 무엇인지
+  - 생각보다 파이썬의 함수들을 많이 모르고 있다는 생각이 들어, 문제풀기 전 인강 및 백준 문제를 풀어볼 계획입니다.
 
 #99클럽 #코딩테스트준비 #개발자취업 #항해99 #TIL
